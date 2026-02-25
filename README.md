@@ -1,9 +1,8 @@
-# Task Manager REST API – Golang Assignment
+# Task Manager REST API – Golang
 
 ## Objective  
 Build a scalable Task Management REST API in Go demonstrating clean architecture, persistence, concurrency, authentication, and background processing.
 
----
 
 ## Tech Stack  
 - **Language:** Go  
@@ -13,7 +12,7 @@ Build a scalable Task Management REST API in Go demonstrating clean architecture
 - **Documentation:** Swagger (OpenAPI)  
 - **Tools:** VS Code, Postman  
 
----
+
 
 ## Features  
 
@@ -25,7 +24,7 @@ Build a scalable Task Management REST API in Go demonstrating clean architecture
 - **GET /tasks/{id}** – Get task  
 - **DELETE /tasks/{id}** – Delete task (owner or admin only)  
 
----
+
 
 ## Task Model  
 
@@ -41,7 +40,6 @@ Build a scalable Task Management REST API in Go demonstrating clean architecture
 }
 ```
 
----
 
 ## Authentication & Authorization  
 
@@ -56,14 +54,13 @@ Authorization: Bearer <token>
 - **user** → can access only own tasks  
 - **admin** → can access all tasks  
 
----
 
 ## Pagination & Filtering  
 
 Supported on **GET /tasks**
 
 ```
-GET /tasks?page=1&limit=5&status=pending
+GET '/tasks?page=1&limit=5&status=pending'
 ```
 
 ### Query Parameters
@@ -71,7 +68,6 @@ GET /tasks?page=1&limit=5&status=pending
 - `limit` → items per page  
 - `status` → pending | in_progress | completed  
 
----
 
 ## Background Worker (Concurrency)  
 
@@ -89,7 +85,6 @@ GET /tasks?page=1&limit=5&status=pending
 AUTO_COMPLETE_MINUTES=5
 ```
 
----
 
 ## Swagger / OpenAPI  
 
@@ -105,7 +100,6 @@ http://localhost:8080/swagger/index.html
 swag init -g cmd/server/main.go
 ```
 
----
 
 ## Folder Structure  
 
@@ -124,7 +118,6 @@ migrations        → SQL schema
 docs              → Swagger files  
 ```
 
----
 
 ## Database  
 
@@ -146,7 +139,6 @@ docs              → Swagger files
 - created_at  
 - updated_at  
 
----
 
 ## How to Run  
 
@@ -157,8 +149,6 @@ CREATE DATABASE taskdb;
 USE taskdb;
 SOURCE migrations/create.sql;
 ```
-
----
 
 ### 2. Create `.env`
 
@@ -173,7 +163,6 @@ JWT_KEY=your_secret_key
 AUTO_COMPLETE_MINUTES=5
 ```
 
----
 
 ### 3. Run Application  
 
@@ -187,7 +176,6 @@ Server runs on:
 http://localhost:8080
 ```
 
----
 
 ## Testing APIs  
 
@@ -201,7 +189,6 @@ Using Postman:
 6. Wait X minutes → verify auto-complete  
 7. Test pagination & filtering  
 
----
 
 ## Design Highlights  
 
@@ -212,15 +199,13 @@ Using Postman:
 - Background worker using goroutines  
 - Swagger for API documentation  
 
----
 
 ## Notes  
 
 Unit tests, Docker, and production-grade improvements are planned for future enhancement.  
 Current focus is on correctness, concurrency, and clean architecture.
 
----
 
 ## Author  
 
-Built as part of a **Golang Assignment – Task Management REST API**
+Built as part of a **Golang – Task Management REST API**
